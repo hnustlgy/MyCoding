@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  name: MyDatebase
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/数据库名?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: #用户名
+    password: #密码
+  servlet:
+    multipart:
+      max-file-size: 10MB #设置文件上传大小
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #驼峰命名法
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #日志
+  global-config:
+    db-config:
+      id-type: assign_id #雪花算法生成id
